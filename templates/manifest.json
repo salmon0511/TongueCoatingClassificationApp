@@ -1,0 +1,20 @@
+{
+    "short_name":"zettai（仮）",
+    "name":"zettai(仮)",
+    "icon":[
+        {
+            "src":"icon-192-192.png",
+            "type":"image/png",
+            "sizes":"192x192"
+        },
+        {
+            "src":"icon-512-512.png",
+            "type":"image/png",
+            "sizes":"512x512"
+        }
+    ],
+    "state_url":"test.html",
+    "display":"standalone",
+    "orientation":"portrait",
+    "background_color":"white"
+}

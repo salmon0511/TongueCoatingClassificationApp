@@ -1,0 +1,146 @@
+<!DOCTYPE! html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>舌苔判定プログラム</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="shortcut icon" href="/static/favicon.ico">
+        
+        <!-- BootstrapのCSS読み込み -->
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+        
+        <!--manifest.jsonの読み込み-->
+        <link rel="manifest" href="./manifest.json">
+    </head>
+    
+    <body>
+        <!--navi bar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <a class="navbar-brand" href="#">舌苔判定プログラム（仮）</a>
+            
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        
+        <!--header area-->
+        <header class = "bg-primary text-center">
+            <div class = "bg-mask">
+                <div class="container">
+                    <h1>舌苔判定プログラム（仮）</h1>
+                    <h2>舌の写真を載せてみてね</h2>
+                </div>
+            </div>
+        </header>
+        
+        
+        <!--sorting Grid section-->
+        <section class = "sorting">
+        <div class = "container text-center">
+            <img id = 'img1' style="width:300px;height:300px;">
+            <form id = "f1" method = "post" enctype=multipart/form-data>
+                
+                <span id='error'></span><br>
+                <input type='file' id='myfile' name="file">
+                <input type="submit" id = 'submit' value="判定する">
+
+            </form>
+        </div>
+        </section>
+<!-- prediction session-->
+        <div class = "container">
+            <p>
+                {%if result_title%}
+                    {{result_title}}
+                {%else%}
+                {%endif%}
+
+            </p>
+            <p class="lead">
+                <span>
+                  {% if result %}
+                    あなたの舌の汚れ度合いは３段階中、{{ result }}
+                  {% else %}
+                  {% endif %}
+                </span>
+                <br>
+                <br>
+                <span>
+                    {%if result_content%}
+                    {{result_content}}
+                    {%else%}
+                    {%endif%}
+                </span>
+                <br>
+                <br>
+                
+                <span>
+                    {%if result_solution%}
+                    {{result_solution}}
+                    {%else%}
+                    {%endif%}
+                </span>
+            </p>
+        
+        </div>
+        
+        <!--footer-->
+<!--
+        <footer class = "footer mt-auto py-3">
+            footer
+        </footer>
+-->
+        <!--servise workerの登録関係-->
+        <script>
+            if('serviceWorker' in navigator){
+                navigator.serviceWorker.register('service_worker.js').then(function(registration){
+                    console.log('ServiceWorker registration successful with scope:', registration.scope);
+                }).catch(function(err){
+                    console.log('ServiceWorker registration faild:', err);
+                });
+
+            }
+            var app = new Vue({
+                el:"#app",
+                data:{
+                    message:'Hello Vue!'
+                },
+                methods:{
+                    reverseMessage: function(){
+                        this.message = this.message.split('').reverse().join('')
+                    }
+                }
+            });
+        
+        <!--jquery-->
+        <script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
+        
+        <!--js script-->
+        <script type="text/javascript" src="/static/js/text.js"></script>
+        
+        <!-- BootstrapのJS読み込み -->
+        <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+        
+        
+    </body>
+
+
+</html>

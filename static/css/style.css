@@ -1,0 +1,35 @@
+header{
+    height:600px;
+    font-weight: bold;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.bg-primary{
+    background-image: url(/static/image/header-background.jpg);
+    background-size: cover;
+}
+
+
+
+.bg-mask{
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+}
+
+h1{
+    padding-top: 300px;
+}
+
+.sorting{
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+
+.lead{
+    padding:10px;
+    background-color: rgba(240, 240, 232, 0.6);
+    border-radius: 7px;
+}
