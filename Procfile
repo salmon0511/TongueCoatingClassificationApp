@@ -1,1 +1,1 @@
-web: gunicorn predict_web:app --log-file -
+web: python predict_web.py
