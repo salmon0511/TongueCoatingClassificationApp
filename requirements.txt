@@ -1,5 +1,5 @@
 Flask==1.0.2
-Flask-Cors==3.0.7
+Flask-Cors==3.0.9
 Werkzeug==0.14.1
 Keras==2.2.4
 Keras-Applications==1.0.6
