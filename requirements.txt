@@ -7,7 +7,7 @@ Keras-Preprocessing==1.0.5
 backports.os==0.1.1
 numpy==1.16.2
 numpydoc==0.8.0
-Pillow==5.4.1
+Pillow==8.3.2
 imagesize==1.1.0
 tensorboard==1.12.2
 tensorflow==1.12.0
